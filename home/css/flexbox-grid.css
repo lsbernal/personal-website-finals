@@ -1,0 +1,88 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "goals about"
+        "hobbies about"
+        "footer footer";
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.grid-container > div {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Area Assignments */
+.item1 {
+    grid-area: header;
+    text-align: center;
+    background-color: #007bff;
+    color: #000000;
+}
+
+.item2 {
+    grid-area: goals;
+}
+
+.item3 {
+    grid-area: about;
+}
+
+.item4 {
+    grid-area: hobbies;
+}
+
+.item5 {
+    grid-area: footer;
+    text-align: center;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+/* Flexbox Section */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align items */
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+.flex-item {
+    border: 2px solid #ddd; /* Border around each section */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    margin: 10px; /* Outer spacing */
+    background-color: #f9f9f9; /* Light background */
+    flex: 1 1 300px; /* Flexible sizing */
+    max-width: 400px; /* Restrict maximum size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center the text */
+}
+
+.flex-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.flex-item p {
+    margin: 5px 0;
+    color: #555;
+}
