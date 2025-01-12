@@ -115,11 +115,34 @@
     <hr>
   
     <div>
+      <p><strong>Shopping list:</strong></p>
+      <ul id="ulToFind">
+        <li 
+          v-for="item in shoppingList" 
+          v-bind:class="{ impClass: item.important }"
+          v-on:click="item.found=!item.found"
+          v-show="!item.found">
+            {{ item.name }}, {{ item.number}}
+        </li>
+      </ul>
+      <ul id="ulFound">
+        <li 
+          v-for="item in shoppingList" 
+          v-bind:class="{ impClass: item.important }"
+          v-on:click="item.found=!item.found"
+          v-show="item.found">
+            {{ item.name }}, {{ item.number}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/images.js"></script>
-
+<script src="js/shopping.js"></script>
 
 </body>
 </html>
