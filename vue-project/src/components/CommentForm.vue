@@ -18,47 +18,39 @@
     </div>
   </template>
   
-  <script>
-  import { createClient } from '@supabase/supabase-js'
+  <script setup>
+  import { ref } from 'vue';
+  import { createClient } from '@supabase/supabase-js';
   
-  export default {
-    data() {
-      return {
-        name: '',
-        comment: '',
-        submissionStatus: null,
-        supabase: null, // Initialize Supabase client
-        //  Your Supabase URL and Key - IMPORTANT!
-        supabaseUrl: 'YOUR_SUPABASE_URL', 
-        supabaseKey: 'YOUR_SUPABASE_ANON_KEY',
-        tableName: 'comments' // Name of your Supabase table
-      }
-    },
-    mounted() {
-      // Initialize Supabase client on component mount
-      this.supabase = createClient(this.supabaseUrl, this.supabaseKey)
-    },
-    methods: {
-      async submitComment() {
-        this.submissionStatus = "Submitting..."
-        try {
-          const { error } = await this.supabase
-            .from(this.tableName)
-            .insert([{ name: this.name, comment: this.comment }])
+  const name = ref('');
+  const comment = ref('');
+  const submissionStatus = ref(null);
   
-          if (error) {
-            console.error("Error inserting comment:", error)
-            this.submissionStatus = "Error submitting comment. Please try again."
-          } else {
-            this.submissionStatus = "Comment submitted successfully!"
-            this.name = ''; // Clear form fields
-            this.comment = '';
-          }
-        } catch (err) {
-          console.error("An unexpected error occurred:", err)
-          this.submissionStatus = "An unexpected error occurred. Please try again later."
-        }
+  // Your Supabase URL and Key - IMPORTANT!
+  const supabaseUrl = 'https://hpqjdrwbeibeyuqdnozp.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhwcWpkcndiZWliZXl1cWRub3pwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgyMTgzOTAsImV4cCI6MjA1Mzc5NDM5MH0.vu7U3TwOxnYz3tXbrmeSFAKWLI8FdqZ9hgf9LT6aPlw';
+  const tableName = 'comments'; // Name of your Supabase table
+  
+  const supabase = createClient(supabaseUrl, supabaseKey);
+  
+  async function submitComment() {
+    submissionStatus.value = "Submitting...";
+    try {
+      const { error } = await supabase
+        .from(tableName)
+        .insert([{ name: name.value, comment: comment.value }]);
+  
+      if (error) {
+        console.error("Error inserting comment:", error);
+        submissionStatus.value = "Error submitting comment. Please try again.";
+      } else {
+        submissionStatus.value = "Comment submitted successfully!";
+        name.value = ''; // Clear form fields
+        comment.value = '';
       }
+    } catch (err) {
+      console.error("An unexpected error occurred:", err);
+      submissionStatus.value = "An unexpected error occurred. Please try again later.";
     }
   }
   </script>
