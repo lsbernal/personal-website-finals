@@ -3,7 +3,7 @@
       <ul>
           <li v-for="comment in comments" :key="comment.id">{{ comment.name }}</li>
       </ul>
-    
+</template>    
       <style>
       #app > div {
       border: dashed black 1px;
@@ -19,14 +19,14 @@
     import { ref, onMounted } from 'vue'
     import { supabase } from './lib/supabaseClient'
     
-    const countries = ref([])
+    const comments = ref([])
     
-    async function getCountries() {
-      const { data } = await supabase.from('countries').select()
+    async function getComments() {
+      const { data } = await supabase.from('comments').select()
       countries.value = data
     }
     
     onMounted(() => {
-      getCountries()
+      getComments()
     })
     </script>
