@@ -1,88 +1,203 @@
-/* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, sans-serif;
     line-height: 1.6;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    height: 100vh;
 }
 
-/* Grid Container */
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "goals about"
-        "hobbies about"
-        "footer footer";
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
+#welcome {
+    height: 100vh;
+    background-image: url('https://media.istockphoto.com/id/1422478091/photo/close-up-of-a-hands-on-a-laptop-keyboard.jpg?s=612x612&w=0&k=20&c=TNGJooImQwsqodIC8vZB4e0r60RN989t0H9lmBmz60Y=');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+#welcome::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
     padding: 20px;
 }
 
-.grid-container > div {
+#welcome-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+#welcome-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+#welcome-content a {
+    padding: 12px 24px;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#welcome-content a:hover {
+    background-color: #414e53;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#aboutme {
+    width: 90%;
+    margin: 20px auto;
+    padding-top: 50px;
     background-color: #ffffff;
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Grid Area Assignments */
-.item1 {
-    grid-area: header;
     text-align: center;
-    background-color: #007bff;
-    color: #000000;
 }
 
-.item2 {
-    grid-area: goals;
+#aboutme-container{
+    padding-top: 50px !important;
 }
 
-.item3 {
-    grid-area: about;
+#coursetext {
+    font-weight: bold;
 }
 
-.item4 {
-    grid-area: hobbies;
+section {
+    margin-bottom: 50px;
 }
 
-.item5 {
-    grid-area: footer;
+h1, h4 {
     text-align: center;
-    background-color: #343a40;
-    color: #ffffff;
 }
 
-/* Flexbox Section */
-.flex-container {
+img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+}
+
+#profile-pic {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#flex-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center-align items */
-    gap: 20px; /* Space between items */
-    margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
 }
 
-.flex-item {
-    border: 2px solid #ddd; /* Border around each section */
-    border-radius: 10px; /* Rounded corners */
-    padding: 15px; /* Inner spacing */
-    margin: 10px; /* Outer spacing */
-    background-color: #f9f9f9; /* Light background */
-    flex: 1 1 300px; /* Flexible sizing */
-    max-width: 400px; /* Restrict maximum size */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center; /* Center the text */
+#flex-item {
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding-top:35px;
+    padding-bottom: 25px;
+    padding-left:10px;
+    padding-right: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.flex-item h4 {
+#flex-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#item5, #surveyform {
+    display: block;
+}
+
+#survey-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#surveyform {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+#surveyform h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+#surveyform input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
     margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
+    box-sizing: border-box;
 }
 
-.flex-item p {
+#surveyform button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#surveyform button:hover {
+    background-color: #414e53;
+}
+
+#surveyform ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#surveyform li {
     margin: 5px 0;
-    color: #555;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.8em;
 }

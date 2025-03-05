@@ -1,84 +1,148 @@
 <template>
-    <div>
-      <h2>Leave a Comment</h2>
-      <form @submit.prevent="submitComment">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" v-model="name" required class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="comment">Comment:</label>
-          <textarea id="comment" v-model="comment" required class="form-control"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <div v-if="submissionStatus" class="mt-2">
-          {{ submissionStatus }}
-        </div>
-      </form>
+  <div class="comment-form-container">
+    <form @submit.prevent="submitComment" class="comment-form">
+      <div class="name-fields">
+        <input type="text" v-model="firstName" placeholder="First Name" required />
+        <input type="text" v-model="lastName" placeholder="Last Name" required />
+      </div>
+      <textarea v-model="comment" placeholder="Type your comment here" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display Comments Below the Form -->
+    <div class="comments-section">
+      <h3>Comments:</h3>
+      <ul>
+        <li v-for="(c, index) in comments" :key="index">
+          <strong>{{ c.first_name }} {{ c.last_name }}</strong>: {{ c.comment }}
+        </li>
+      </ul>
     </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  import { createClient } from '@supabase/supabase-js';
-  
-  const name = ref('');
-  const comment = ref('');
-  const submissionStatus = ref(null);
-  
-  // Your Supabase URL and Key - IMPORTANT!
-  const supabaseUrl = 'https://hpqjdrwbeibeyuqdnozp.supabase.co';
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhwcWpkcndiZWliZXl1cWRub3pwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgyMTgzOTAsImV4cCI6MjA1Mzc5NDM5MH0.vu7U3TwOxnYz3tXbrmeSFAKWLI8FdqZ9hgf9LT6aPlw';
-  const tableName = 'comments'; // Name of your Supabase table
-  
-  const supabase = createClient(supabaseUrl, supabaseKey);
-  
-  async function submitComment() {
-    submissionStatus.value = "Submitting...";
-    try {
-      const { error } = await supabase
-        .from(tableName)
-        .insert([{ name: name.value, comment: comment.value }]);
-  
-      if (error) {
-        console.error("Error inserting comment:", error);
-        submissionStatus.value = "Error submitting comment. Please try again.";
-      } else {
-        submissionStatus.value = "Comment submitted successfully!";
-        name.value = ''; // Clear form fields
-        comment.value = '';
+  </div>
+</template>
+
+<script>
+import { supabase } from "../lib/supabaseClient";
+
+export default {
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      comment: "",
+      comments: [],
+    };
+  },
+  mounted() {
+    this.fetchComments(); // Fetch comments when component loads
+  },
+  methods: {
+    async submitComment() {
+      const { data, error } = await supabase
+        .from("comments")
+        .insert([{ first_name: this.firstName, last_name: this.lastName, comment: this.comment }]);
+
+      if (!error) {
+        this.firstName = "";
+        this.lastName = "";
+        this.comment = "";
+        this.fetchComments(); // Refresh comments after submission
       }
-    } catch (err) {
-      console.error("An unexpected error occurred:", err);
-      submissionStatus.value = "An unexpected error occurred. Please try again later.";
-    }
-  }
-  </script>
-  
-  <style scoped>
-  /* Basic styling - Customize as needed */
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  </style>
+    },
+    async fetchComments() {
+      const { data, error } = await supabase.from("comments").select("*");
+      if (!error) {
+        this.comments = data;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+.comment-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-style: none !important;
+  width: 100%;
+}
+
+.comment-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.name-fields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #414e53;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border:none !important;
+  width: 50%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: center; /* Center-align comments */
+}
+</style>

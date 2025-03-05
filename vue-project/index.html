@@ -1,77 +1,133 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+<html lang="en">
+<head>
+  <title>My Profile Page</title>
+  <link rel="stylesheet" href="src/assets/style.css">
+  <link rel="stylesheet" href="src/assets/images.css">
+  <link rel="stylesheet" href="src/assets/shopping.css">
+  <link rel="stylesheet" href="src/assets/bootstrap.css">
+  <link rel="stylesheet" href="src/assets/flexbox-grid.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-    <div class="grid-container">
-      <!-- Header Section -->
-      <div class="item1">
-          <h1>Personal Profile Web Page</h1>
+<body>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#welcome">Lorenzo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#aboutme">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#gallery">Images</a>
+          </li>
+        </ul>
       </div>
-  
-      <!-- Goals Section -->
-      <div class="item2">
-          <h4>Goals In Life / Dream</h4>
-          <ul>
-              <li>To be financially stable</li>
-              <li>To have a loving family</li>
-              <li>To be healthy and live a long and happy life.</li>
-          </ul>
-      </div>
-  
-      <!-- About Me Section (Includes Flexbox) -->
-      <div class="item3">
-          <h2>About Me</h2>
-          <h4>Hi, I'm Lorenzo</h4>
-          <img src="https://via.placeholder.com/250" alt="Profile Picture">
-          <div>(Do not include birthdate / age / contact information)</div>
-  
-          <h4>Education / Achievements</h4>
-          <p>I studied at <a href="https://www.apc.edu.ph">Asia Pacific College</a> for Senior High School, and decided to pursue my undergraduate studies at Asia Pacific College still.</p>
-  
-          <h4>Course:</h4>
-          <p>BS Computer Science with specialization in Cybersecurity and Forensics</p>
-  
-          <!-- Flexbox Section -->
-          <div class="flex-container">
-              <div class="flex-item">
-                  <h4>IT Experience #1</h4>
-                  <p>Made a replica of the library of APC using Minecraft, and used Minecraft commands.</p>
-              </div>
-              <div class="flex-item">
-                  <h4>IT Experience #2</h4>
-                  <p>Developed a website that sells gym equipment called Health N'Fit. This was my final project for the APC bootcamp.</p>
-              </div>
-              <div class="flex-item">
-                  <h4>Hobby: Gaming</h4>
-                  <p>Building servers and trying out new mods for Minecraft.</p>
-              </div>
-          </div>
-      </div>
-  
-      <!-- Hobbies Section -->
-      <div class="item4">
-          <h4>Hobbies & Interests</h4>
-          <ul>
-              <li>Watching movies</li>
-              <li>Listening to Music</li>
-              <li>Going to the gym</li>
-              <li>Learning Jiu Jutsu</li>
-          </ul>
-      </div>
-  
-      <!-- Footer -->
-      <div class="item5">
-          Footer
-      </div>
+    </div>
+  </nav>
+
+  <div id="welcome">
+    <div id="welcome-content">
+      <h1>Hi! I'm Lorenzo Bernal</h1>
+      <p>Welcome to my profile page</p>
+      <a href="#aboutme">Learn More</a>
+    </div>
   </div>
-  </body>
-</html>
 
+  <div id="aboutme-container">
+    <div id="aboutme">
+      <section>
+        <h1>About Me</h1>
+        <img src="src/assets/images/me.png" alt="My Profile Picture" id="profile-pic">
+        <p>I studied at Asia Pacific College for Senior High School, and I've decided to pursue my undergraduate studies at Asia Pacific College still.</p>
+        <p id="coursetext" style="font-weight: bold;">Course:</p>
+        <p>BS Computer Science with specialization in Cybersecurity and Forensics</p>
+      </section>
+    </div>
+  </div>
+
+  <section>
+    <h1 class="itexp">IT Experience</h1>
+    <div id="flex-container">
+      <div id="flex-item">
+        <h4>IT Experience #1</h4>
+        <p>Made a replica of the library of APC using Minecraft, and used Minecraft commands.</p>
+      </div>
+      <div id="flex-item">
+        <h4>IT Experience #2</h4>
+        <p>Developed a website that sells gym equipment called Health N'Fit. </p>
+      </div>
+      <div id="flex-item">
+        <h4>IT Experience #3</h4>
+        <p>Co-developed a game made out of Python. This is my final project for APC SHS Bootcamp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Hobbies & Interests</h1>
+    <div id="flex-container">
+      <div id="flex-item">
+        <ul>
+          <li>Watching movies</li>
+          <li>Going to the gym</li>
+          <li>Learning Jiu Jitsu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Goals In Life / Dream</h1>
+    <div id="flex-container">
+      <div id="flex-item">
+        <ul>
+          <li>To be financially stable</li>
+          <li>To have a loving family</li>
+          <li>To be healthy and live a long and happy life.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<div id="gallery"></div>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>&copy; Lorenzo Bernal</p>
+          <div>
+            <a href="https://www.linkedin.com/in/lorenzo-bernal-6b6b84249/" class="text-white mx-2" aria-label="LinkedIn">
+              <i class="fab fa-linkedin fa-3x"></i>
+            </a>
+            <a href="https://github.com/lsbernal" class="text-white mx-2" aria-label="GitHub">
+              <i class="fab fa-github fa-3x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VUE & SUPABASE SCRIPTS -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="./js/vue.js"></script>
+  <script src="/lib/images.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="/lib/images.js"></script>
+  <script type="module" src="/assets/js/images.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
