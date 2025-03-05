@@ -22,13 +22,13 @@ export default {
 <style scoped>
 .comment-section {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: flex-start; /* Aligns items at the top */
-  gap: 30px; /* Adds spacing between CommentForm and Comment */
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 30px; 
   width: 100%;
   border-style:none !important;
   background-color:rgb(255, 253, 228)  !important;
-  padding-top: 50px; /* Adds spacing from the top */
+  padding-top: 50px; 
 }
 
 </style>

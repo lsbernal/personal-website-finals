@@ -23,39 +23,35 @@
   </script>
   
   <style scoped>
-/* Outer container with a gray background and always "hovered" effect */
+
 .image-section {
-  background-color: #2d3e50; /* Darker shade for contrast */
+  background-color: #2d3e50; 
   padding: 40px;
-  border-radius: 15px; /* Slightly rounder corners */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  border-radius: 15px; 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Ensures content is vertically centered */
-  width: 100vw; /* Takes up full viewport width */
-  margin: 0; /* No margins */
-  padding-left: 5vw; /* Optional padding to avoid content hugging the left side */
-  padding-right: 5vw; /* Optional padding to avoid content hugging the right side */
+  justify-content: center; 
+  width: 100vw; 
+  margin: 0; 
+  padding-left: 5vw; 
+  padding-right: 5vw; 
   margin-bottom: 60px;
-  box-sizing: border-box; /* Ensures padding is included in the container width */
-  transform: scale(1.05); /* Always zoomed in */
-  transition: box-shadow 0.3s ease; /* Only transition the shadow */
+  box-sizing: border-box; 
+  transform: scale(1.05); 
+  transition: box-shadow 0.3s ease; 
 }
 
 
-
-
-/* Styling for the title */
 .gallery-title {
   font-size: 36px;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 20px; /* Space between title and images */
+  margin-bottom: 20px; 
   text-align: center;
 }
 
-/* Container for images */
 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -75,11 +71,10 @@ figure {
   background-color: #eff6f8;
 }
 
-/* Image styling */
 .food-image {
   width: 100%;
-  height: 180px; /* Uniform height */
-  object-fit: cover; /* Ensures images fill the space properly */
+  height: 180px; 
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

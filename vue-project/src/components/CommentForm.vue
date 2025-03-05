@@ -34,7 +34,7 @@ export default {
     };
   },
   mounted() {
-    this.fetchComments(); // Fetch comments when component loads
+    this.fetchComments();
   },
   methods: {
     async submitComment() {
@@ -46,7 +46,7 @@ export default {
         this.firstName = "";
         this.lastName = "";
         this.comment = "";
-        this.fetchComments(); // Refresh comments after submission
+        this.fetchComments(); 
       }
     },
     async fetchComments() {
