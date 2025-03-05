@@ -1,0 +1,95 @@
+<style>
+body {
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: white;
+    padding-top: 70px; 
+  }
+
+  .custom-navbar {
+    background-color: rgb(255, 255, 255)
+  }
+  
+
+
+h1 {
+  text-align: center;
+  color: #333;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.reference {
+  background-color: #eff6f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.reference-title {
+  background-color: #385170;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reference-title:hover {
+  background-color: #99b7db;
+}
+
+.reference-content {
+  display: none;
+  margin-top: 10px;
+}
+
+.reference-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.reference-content a {
+  color: #385170;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.reference-content a:hover {
+  color: #000000;
+}
+
+.back-to-aboutme {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-to-aboutme a {
+  padding: 12px 24px;
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.back-to-aboutme a:hover {
+  background-color: #414e53;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
