@@ -27,7 +27,7 @@ export default {
   gap: 30px; /* Adds spacing between CommentForm and Comment */
   width: 100%;
   border-style:none !important;
-  background-color:white !important;
+  background-color:rgb(255, 253, 228)  !important;
   padding-top: 50px; /* Adds spacing from the top */
 }
 

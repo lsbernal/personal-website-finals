@@ -66,7 +66,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: white;
+  background-color: rgb(255, 253, 228)  !important;;
   padding: 20px;
   border-style: none !important;
   width: 100%;
@@ -125,10 +125,10 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Comments Section */
+
 .comments-section {
   margin-top: 20px;
-  background: white;
+  background: rgb(255, 253, 228)  !important;;
   padding: 15px;
   border:none !important;
   width: 50%;
