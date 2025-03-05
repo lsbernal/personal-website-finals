@@ -64,13 +64,13 @@
   width: 100%;
 }
 
-/* Ensure images are the same height while keeping aspect ratio */
+
 figure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px; /* Fixed width for uniform image sizes */
-  height: 250px; /* Fixed height for uniform alignment */
+  width: 200px; 
+  height: 250px; 
   overflow: hidden;
   background-color: #eff6f8;
 }
@@ -87,11 +87,11 @@ figure {
 figcaption {
   text-align: center;
   font-size: 16px;
-  color: #000000; /* White color for the caption text */
+  color: #000000; 
   margin-top: 5px;
-  font-weight: 300; /* Make the caption text bolder */
-  text-transform: capitalize; /* Capitalize first letter of each word */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-weight: 300; 
+  text-transform: capitalize; 
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
 }
 
   </style>

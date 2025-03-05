@@ -83,10 +83,10 @@ body {
 #aboutme-container {
     padding-top: 50px !important;
     margin-bottom: 50px;
-    background-color: #385170; /* Add background color behind the About Me section */
-    padding-bottom: 50px; /* Add padding for spacing */
-    border-radius: 10px; /* Optional: rounds the container's corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow to the background */
+    background-color: #385170; 
+    padding-bottom: 50px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -125,7 +125,7 @@ img {
 }
 
 #flex-item {
-    background-color: #f9f9f9;
+    background-color: #eff6f8;
     border: 2px solid #ddd;
     border-radius: 10px;
     padding-top:35px;
