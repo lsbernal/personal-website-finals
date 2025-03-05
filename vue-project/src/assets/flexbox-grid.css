@@ -9,6 +9,7 @@ body {
     padding: 0;
     height: 100vh;
     background-color: rgb(255, 253, 228)  !important;
+    overflow-x: hidden;
 }
 
 #welcome {
@@ -63,7 +64,7 @@ body {
 }
 
 #welcome-content a:hover {
-    background-color: #7a978f;
+    background-color: #414e53;
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

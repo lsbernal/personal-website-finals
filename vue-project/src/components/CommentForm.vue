@@ -128,7 +128,7 @@ button:hover {
 
 .comments-section {
   margin-top: 20px;
-  background: rgb(255, 253, 228)  !important;;
+  background: rgb(255, 253, 228)  !important;
   padding: 15px;
   border:none !important;
   width: 50%;
@@ -143,6 +143,6 @@ ul {
 li {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  text-align: center; /* Center-align comments */
+  text-align: center; 
 }
 </style>
